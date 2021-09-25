@@ -19,7 +19,7 @@ ProtectHome=true
 ProtectSystem=full
 
 WorkingDirectory=/minecraft
-ExecStart=java -Xms${MINHEAP} -Xmx${MAXHEAP} -XX:ParallelGCThreads=${THREADS} -jar server.jar --nogui
+ExecStart=java -Xms${MINHEAP} -Xmx${MAXHEAP} -XX:ParallelGCThreads=${THREADS} -Djava.net.preferIPv4Stack=false -jar server.jar --nogui
 ExecStop=/usr/bin/mcrcon -H localhost -p ${RCON_PASSWD} stop
 
 [Install]
